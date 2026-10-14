@@ -57,6 +57,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+      - name: Install Python dependencies (needed by sfx.py at import time)
+        run: pip install numpy scipy pillow
       - name: Plan (theme x ratio)
         id: plan
         env:
